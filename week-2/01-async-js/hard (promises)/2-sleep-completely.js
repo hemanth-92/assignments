@@ -4,7 +4,15 @@
  * the function should return a promise just like before
  */
 
-function sleep(milliseconds) {
+function sleep(seconds) {
+    return new Promise(resolve=>
+        setTimeout(resolve,seconds)) 
 }
+async function example() {
+    // console.log('Start');
+    await sleep(2000); // Sleep for 2000 milliseconds
+    // console.log('End');
+} 
+example();
 
 module.exports = sleep;
